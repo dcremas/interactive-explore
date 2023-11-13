@@ -54,7 +54,7 @@ plot_precip = figure(height=150, width=400, title="", toolbar_location=None, siz
               x_axis_type="datetime", y_range=y_axis_range['Precipitation'], margin=(10, 10, 10, 10),
               background_fill_color="#F1EDF5", outline_line_color='white')
 
-plot_precip.line(x="x", y="y", source=source_precip)
+plot_precip.vbar(x="x", top="y", source=source_precip)
 plot_precip.yaxis.axis_label = "Precip"
 
 
