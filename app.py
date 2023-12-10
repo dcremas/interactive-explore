@@ -87,12 +87,18 @@ controls = [years, months, station_name, y_axis]
 for control in controls:
     control.on_change('value', lambda attr, old, new: update())
 
+hyperlink_div = Div(
+    text="""<a href="https://dataviz.dustincremascoli.com">Go back to Data Visualizations Main Page</a>""",
+    width=400, height=100
+    )
+
 layout = column(desc,
                 row(years, months, sizing_mode="inherit"),
                 station_name,
                 y_axis,
                 plot,
                 plot_precip,
+                hyperlink_div,
                 sizing_mode="stretch_width", height=400)
 
 update()
