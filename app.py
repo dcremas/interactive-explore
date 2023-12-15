@@ -24,7 +24,7 @@ axis_map = {
 
 y_axis_range = {
     "Temperature": (-25.0, 125.0), 
-    "Barometric Pressure": (29.0, 31.0),
+    "Barometric Pressure": (28.5, 31.5),
     "Wind Speed": (0.0, 50.0),
     "Precipitation": (0.0, 1.0),
     "Dew Point": (0.0, 100.0),
@@ -33,7 +33,7 @@ y_axis_range = {
 desc = Div(text=(Path(__file__).parent / "description.html").read_text("utf8"), sizing_mode="stretch_width",
            margin=(2, 2, 2, 15))
 
-years = Slider(title="Year", value=2023, start=2023, end=2023, step=1, margin=(2, 2, 2, 15))
+years = Slider(title="Year", value=2022, start=2023, end=2023, step=1, margin=(2, 2, 2, 15))
 months = Slider(title="Month", value=1, start=1, end=12, step=1, margin=(2, 2, 2, 15))
 station_name = Select(title="Weather Station Name", value=stations[0], options=stations, margin=(2, 2, 2, 15))
 y_axis = Select(title="Main Chart Y Axis", options=sorted(axis_map.keys()), value="Barometric Pressure", margin=(2, 2, 2, 15))
