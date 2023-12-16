@@ -47,6 +47,12 @@ WHERE rgn.sub_region IN ('PACIFIC', 'EAST NORTH CENTRAL', 'NEW ENGLAND')
 ORDER BY obs.station, obs.date;
 '''
 
+query_update = f'''
+SELECT
+MAX(timestamp)
+FROM observations;
+'''
+
 headers = ['station' , 'station_name', 'state', 'date', 'rdg_year', 'rdg_month', 'rdg_day', 'tmp', 'slp', 'wnd', 'prp', 'dew']
 
 with psycopg2.connect(url_string) as connection:
@@ -57,3 +63,6 @@ with psycopg2.connect(url_string) as connection:
     cursor.execute(query_data)
     response_data = cursor.fetchall()
     data = [x for x in response_data]
+    cursor.execute(query_update)
+    response_update = cursor.fetchall()
+    time_update = response_update[0][0]

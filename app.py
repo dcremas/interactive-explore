@@ -7,10 +7,10 @@ import numpy as np
 
 from bokeh.io import curdoc
 from bokeh.layouts import column, row
-from bokeh.models import ColumnDataSource, Div, Select, Slider, TextInput, Range1d
+from bokeh.models import ColumnDataSource, Div, Select, Slider, TextInput, Range1d, Paragraph
 from bokeh.plotting import figure
 
-from models import stations, data, headers
+from models import stations, data, headers, time_update
 
 weatherdata = pd.DataFrame(data, columns=headers)
 weatherdata['date'] = np.array(weatherdata['date'], dtype=np.datetime64)
@@ -87,6 +87,14 @@ controls = [years, months, station_name, y_axis]
 for control in controls:
     control.on_change('value', lambda attr, old, new: update())
 
+update_text_1 = f'The Postgresql AWS Cloud Database that feeds the visuals was last updated:'
+update_text_2 = f'Date: {time_update.strftime("%d %B, %Y")}'
+update_text_3 = f'Time: {time_update.strftime("%I:%M:%S %p")}'
+
+p1 = Paragraph(text=update_text_1, width=800, height=10, margin=(25, 25, 5, 40))
+p2 = Paragraph(text=update_text_2, width=800, height=10, margin=(5, 25, 5, 40))
+p3 = Paragraph(text=update_text_3, width=800, height=10, margin=(5, 25, 25, 40))
+
 hyperlink_div = Div(
     text="""<a href="https://dataviz.dustincremascoli.com">Go back to Data Visualizations Main Page</a>""",
     width=400, height=100
@@ -98,6 +106,9 @@ layout = column(desc,
                 y_axis,
                 plot,
                 plot_precip,
+                p1,
+                p2,
+                p3,
                 hyperlink_div,
                 sizing_mode="stretch_width", height=400)
 
