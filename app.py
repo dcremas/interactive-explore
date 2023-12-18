@@ -42,8 +42,8 @@ source = ColumnDataSource(data=dict(x=weatherdata[weatherdata['station_name'] ==
                                     y=weatherdata[weatherdata['station_name'] == stations[0]][axis_map[y_axis.value]]))
 
 plot = figure(height=400, title="", toolbar_location=None, sizing_mode="stretch_width",
-              x_axis_type="datetime", y_range=y_axis_range[y_axis.value], margin=(10, 10, 10, 10),
-              background_fill_color="#F9F7FA", outline_line_color='white')
+              x_axis_type="datetime", y_range=y_axis_range[y_axis.value], margin=(10, 10, 10, 15),
+              background_fill_color="#feffd9", outline_line_color='white')
 
 plot.line(x="x", y="y", source=source)
 
@@ -51,8 +51,8 @@ source_precip = ColumnDataSource(data=dict(x=weatherdata[weatherdata['station_na
                                     y=weatherdata[weatherdata['station_name'] == stations[0]]['prp']))
 
 plot_precip = figure(height=150, width=400, title="", toolbar_location=None, sizing_mode="stretch_width",
-              x_axis_type="datetime", y_range=y_axis_range['Precipitation'], margin=(10, 10, 10, 10),
-              background_fill_color="#F1EDF5", outline_line_color='white')
+              x_axis_type="datetime", y_range=y_axis_range['Precipitation'], margin=(10, 10, 10, 15),
+              background_fill_color="#e8eafa", outline_line_color='white')
 
 plot_precip.vbar(x="x", top="y", source=source_precip)
 plot_precip.yaxis.axis_label = "Precip"
@@ -91,13 +91,13 @@ update_text_1 = f'The Postgresql AWS Cloud Database that feeds the visuals was l
 update_text_2 = f'Date: {time_update.strftime("%d %B, %Y")}'
 update_text_3 = f'Time: {time_update.strftime("%I:%M:%S %p")}'
 
-p1 = Paragraph(text=update_text_1, width=800, height=10, margin=(25, 25, 5, 40))
-p2 = Paragraph(text=update_text_2, width=800, height=10, margin=(5, 25, 5, 40))
-p3 = Paragraph(text=update_text_3, width=800, height=10, margin=(5, 25, 25, 40))
+p1 = Paragraph(text=update_text_1, width=800, height=10, margin=(25, 25, 5, 15))
+p2 = Paragraph(text=update_text_2, width=800, height=10, margin=(5, 25, 5, 15))
+p3 = Paragraph(text=update_text_3, width=800, height=10, margin=(5, 25, 25, 15))
 
 hyperlink_div = Div(
     text="""<a href="https://dataviz.dustincremascoli.com">Go back to Data Visualizations Main Page</a>""",
-    width=400, height=100
+    width=400, height=100, margin=(10, 10, 10, 15)
     )
 
 layout = column(desc,

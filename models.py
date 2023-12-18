@@ -1,11 +1,15 @@
+import os
 import psycopg2
-          
-dbname = 'weatherdata'
-user = 'dustincremascoli'
-password = 'mp2BrVcin8chgfxUO7vb'
-host = 'db-aws.cu1h5zzynwdo.us-east-2.rds.amazonaws.com'
-port = 5432
+from dotenv import load_dotenv
 
+load_dotenv()
+
+dbname = os.getenv('PG_DB')
+user = os.getenv('PG_USERNAME')
+password = os.getenv('PG_PASSWORD')
+host = os.getenv('PG_HOST')
+port =os.getenv('PG_PORT')
+          
 url_string = f"dbname={dbname} user={user} password={password} host={host} port={port}"
 
 query_stations = f'''
