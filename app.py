@@ -33,7 +33,7 @@ y_axis_range = {
 desc = Div(text=(Path(__file__).parent / "description.html").read_text("utf8"), sizing_mode="stretch_width",
            margin=(2, 2, 2, 15))
 
-years = Slider(title="Year", value=2022, start=2022, end=2023, step=1, margin=(2, 2, 2, 15))
+years = Slider(title="Year", value=2021, start=2021, end=2023, step=1, margin=(2, 2, 2, 15))
 months = Slider(title="Month", value=1, start=1, end=12, step=1, margin=(2, 2, 2, 15))
 station_name = Select(title="Weather Station Name", value=stations[0], options=stations, margin=(2, 2, 2, 15))
 y_axis = Select(title="Main Chart Y Axis", options=sorted(axis_map.keys()), value="Barometric Pressure", margin=(2, 2, 2, 15))
