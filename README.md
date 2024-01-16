@@ -14,7 +14,7 @@
 
 - Designing and implementing a full functioning interactive Web Application via the Bokeh library, with multiple toggles to aid in discovery and analysis.
 - Harnessing a back-end AWS RD Postgres database that houses rich historical weather information from  a data pipeline.  All data was sourced from the NOAA public data records.
-- Full data on 112 key US Airport locations.
+- Full data on 10 key US Airport locations.
 
 ##### Technologies:
 
