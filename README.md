@@ -4,15 +4,11 @@
 
 ##### A visualization intended to concisely display what the history is for the past five years (for each hour) of the following key weather metrics, utilizing the toggle to graph on the y-axis:
 
-- [ ] ###### Barometric Pressure
-
-- [ ] ###### Dew Point
-
-- [ ] ###### Temperature
-
-- [ ] ###### Wind Speed
-
-- [ ] ###### Precipitation. 
+- [ ] Barometric Pressure
+- [ ] Dew Point
+- [ ] Temperature
+- [ ] Wind Speed
+- [ ] Precipitation.
 
 ##### Features:
 
