@@ -95,12 +95,18 @@ p1 = Paragraph(text=update_text_1, width=800, height=10, margin=(25, 25, 5, 15))
 p2 = Paragraph(text=update_text_2, width=800, height=10, margin=(5, 25, 5, 15))
 p3 = Paragraph(text=update_text_3, width=800, height=10, margin=(5, 25, 25, 15))
 
+hyperlink_github = Div(
+    text="""<p><i>To see the full codebase for this interactive web-based visualization: </i><a href="https://github.com/dcremas/interactive-explore">Link to my github account</a></p>""",
+    width=800, height=25, margin=(10, 10, 10, 15)
+    )
+
 hyperlink_div = Div(
     text="""<a href="https://dataviz.dustincremascoli.com">Go back to Data Visualizations Main Page</a>""",
     width=400, height=100, margin=(10, 10, 10, 15)
     )
 
 layout = column(desc,
+                hyperlink_github, 
                 row(years, months, sizing_mode="inherit"),
                 station_name,
                 y_axis,
@@ -115,4 +121,4 @@ layout = column(desc,
 update()
 
 curdoc().add_root(layout)
-curdoc().title = "Weather Data"
+curdoc().title = "Historical Hourly Weather Data"
