@@ -1,8 +1,8 @@
-### Title: An Interactive Tool To Visualize 5+ Years (2019 - 2024) of Historical Hourly Weather Data
+### Title: An Interactive Tool To Visualize 3+ Years (2021 - 2024) of Historical Hourly Weather Data
 
 #### Description:
 
-##### A visualization intended to concisely display what the history is for the past five years (for each hour) of the following key weather metrics, utilizing the toggle to graph on the y-axis:
+##### A visualization intended to concisely display what the history is for the past three years (for each hour) of the following key weather metrics, utilizing the toggle to graph on the y-axis:
 
 - [ ] Barometric Pressure
 - [ ] Dew Point
