@@ -56,7 +56,7 @@ JOIN locations loc
 JOIN regions rgn
     ON loc.state = rgn.state
 WHERE obs.station IN {stations_tuple}
-    AND EXTRACT(YEAR from obs.date) BETWEEN 2020 AND 2024
+    AND EXTRACT(YEAR from obs.date) BETWEEN 2021 AND 2025
     AND obs.report_type IN ('FM-15')
     AND obs.slp BETWEEN 20.00 AND 35.00
     AND obs.prp <= 10.00
